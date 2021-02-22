@@ -6,8 +6,8 @@ f0=10;
 f1=20;
 phi0=0.1;
 A = 2;
-%Frequency at t=1 is max
-maxFreq = f0-2*f1+2*f1;
+%Frequency at t=2 is max
+maxFreq = f0-2*f1+2*f1*2;
 samplFreq = 5*maxFreq;
 samplIntrvl = 1/samplFreq;
 
@@ -15,8 +15,8 @@ samplFreq2 = 0.5*maxFreq;
 samplIntrvl2 = 1/samplFreq2;
 
 % Time samples
-timeVec = 0:samplIntrvl:1.0;
-timeVec2 = 0:samplIntrvl2:1.0;
+timeVec = 0:samplIntrvl:2.0;
+timeVec2 = 0:samplIntrvl2:2.0;
 % Number of samples
 nSamples = length(timeVec);
 
@@ -49,8 +49,8 @@ plot(posFreq,abs(fftSig));
 
 %Plot a spectrogram
 %----------------
-winLen = 0.2;%sec
-ovrlp = 0.1;%sec
+winLen = 0.5;%sec
+ovrlp = 0.45;%sec
 %Convert to integer number of samples 
 winLenSmpls = floor(winLen*samplFreq);
 ovrlpSmpls = floor(ovrlp*samplFreq);

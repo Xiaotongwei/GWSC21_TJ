@@ -1,7 +1,7 @@
 %% Plot the Exponentially damped sinusoid
 % Signal parameters
 ta=0.2;
-L0=0.6;
+L0=2.6;
 f0=10;
 tau0=0.2;
 phi0=0.1;
@@ -16,8 +16,8 @@ samplIntrvl2 = 1/samplFreq2;
 
 
 % Time samples
-timeVec = 0:samplIntrvl:1.0;
-timeVec2 = 0:samplIntrvl2:1.0;
+timeVec = 0:samplIntrvl:4.0;
+timeVec2 = 0:samplIntrvl2:4.0;
 % Number of samples
 nSamples = length(timeVec);
 
@@ -50,8 +50,8 @@ plot(posFreq,abs(fftSig));
 
 %Plot a spectrogram
 %----------------
-winLen = 0.2;%sec
-ovrlp = 0.1;%sec
+winLen = 0.8;%sec
+ovrlp = 0.7;%sec
 %Convert to integer number of samples 
 winLenSmpls = floor(winLen*samplFreq);
 ovrlpSmpls = floor(ovrlp*samplFreq);

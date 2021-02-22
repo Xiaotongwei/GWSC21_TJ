@@ -14,8 +14,8 @@ samplFreq2 = 0.5*maxFreq;
 samplIntrvl2 = 1/samplFreq2;
 
 % Time samples
-timeVec = 0:samplIntrvl:1.0;
-timeVec2 = 0:samplIntrvl2:1.0;
+timeVec = 0:samplIntrvl:3.0;
+timeVec2 = 0:samplIntrvl2:3.0;
 % Number of samples
 nSamples = length(timeVec);
 
@@ -48,8 +48,8 @@ plot(posFreq,abs(fftSig));
 
 %Plot a spectrogram
 %----------------
-winLen = 0.2;%sec
-ovrlp = 0.1;%sec
+winLen = 0.4;%sec
+ovrlp = 0.35;%sec
 %Convert to integer number of samples 
 winLenSmpls = floor(winLen*samplFreq);
 ovrlpSmpls = floor(ovrlp*samplFreq);
