@@ -9,18 +9,27 @@ maxFreq = f0;
 samplFreq = 5*maxFreq;
 samplIntrvl = 1/samplFreq;
 
+samplFreq2 = 0.5*maxFreq;
+samplIntrvl2 = 1/samplFreq2;
+
 
 % Time samples
 timeVec = 0:samplIntrvl:1.0;
+
+timeVec2 = 0:samplIntrvl2:1.0;
 % Number of samples
 nSamples = length(timeVec);
 
 % Generate the signal
 sigVec = am_fm(timeVec,b,f0,f1,A);
+sigVec2 = am_fm(timeVec2,b,f0,f1,A);
 
 %Plot the signal 
 figure;
 plot(timeVec,sigVec,'Marker','.','MarkerSize',24);
+
+figure;
+plot(timeVec2,sigVec2,'Marker','.','MarkerSize',24);
 %
 %Plot the periodogram
 %--------------

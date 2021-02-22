@@ -10,18 +10,25 @@ maxFreq = f0;
 samplFreq = 5*maxFreq;
 samplIntrvl = 1/samplFreq;
 
+samplFreq2 = 0.5*maxFreq;
+samplIntrvl2 = 1/samplFreq2;
 
 % Time samples
 timeVec = 0:samplIntrvl:1.0;
+timeVec2 = 0:samplIntrvl2:1.0;
 % Number of samples
 nSamples = length(timeVec);
 
 % Generate the signal
 sigVec = sin_gauss(timeVec,t0,f0,sigma0,A,phi0);
+sigVec2 = sin_gauss(timeVec2,t0,f0,sigma0,A,phi0);
 
 %Plot the signal 
 figure;
+subplot(2,1,1);
 plot(timeVec,sigVec,'Marker','.','MarkerSize',24);
+subplot(2,1,2);
+plot(timeVec2,sigVec2,'Marker','.','MarkerSize',24);
 %
 %Plot the periodogram
 %--------------
